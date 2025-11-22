@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addTodo } from "../../features/todo/TodoSlice";
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../../features/todo/TodoSlice';
 
 function AddTodo() {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
   const dispatch = useDispatch();
 
   return (
     <div className="flex gap-4 bg-white p-5 rounded-xl shadow">
       <input
         className="border p-3 rounded-lg flex-1"
-        placeholder="Yangi vazifa..."
+        placeholder="Komentariya qo'shing..."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
@@ -20,7 +20,7 @@ function AddTodo() {
         onClick={() => {
           if (!text.trim()) return;
           dispatch(addTodo(text));
-          setText("");
+          setText('');
         }}>
         Qo‘shish
       </button>
